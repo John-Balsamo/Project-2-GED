@@ -83,6 +83,9 @@ a {
 p {
   padding-bottom: 1.2631578947em;
 }
+li a:hover {
+    background-color: #3FACFF;
+}
 li {
   padding-bottom: 0.6315789474em; /* ~ 12px @ 19px/em */
 }
@@ -117,6 +120,7 @@ h2 {
   font-size: 1.3440526316em; /* ~ 25.537px @ 19px/em */
   line-height: 0.9398128206em; /* ~ 24px @ 25.537px/em */
   padding-bottom: 0.9398128206em;
+  margin-left: -5px;
 }
 
 h3 {
@@ -152,6 +156,7 @@ nav {
 #links,
 #instructor {
   margin-top: 2.5263157895em;
+  margin-left: -5px
 }
 
 /* ========== Modules ========== */
@@ -161,6 +166,7 @@ header {
   padding-top: 2.5263157895em; /* ~ 48px @ 19px/em */
   padding-bottom: 1.2631578947em;
 }
+
 footer {
   padding-top: 3.7894736842em; /* ~ 72px @ 19px/em */
 }
@@ -182,6 +188,7 @@ small,
   font-size: 0.744018483em; /* ~ 19px @ 25.537px/em */
   text-transform: uppercase;
 }
+
 /* Navigation */
 nav {
   font-weight: 200;
@@ -256,14 +263,19 @@ nav {
 }
 
 .preview {
-  background-color: #EF4566; /*PROJECTS PAGE BACKGROUND COLOR PINK DMARTI "PLEASE CHANGE"*/
-  color: #222;
+  background-color: #17496B; /*PROJECTS PAGE BACKGROUND COLOR PINK DMARTI "PLEASE CHANGE"*/
+  color: #B6C9DC;
   padding-top: 1.2631578947em;
   margin-right: -11.3208%; /* 60px / 530px (650-120) */
   padding-right: 11.3208%;
   margin-left: -11.3208%;
   padding-left: 11.3208%;
   margin-bottom: 1.2631578947em;
+}
+/*PROJECTS 2 section CSS"*/
+#project-two
+{
+  background-color: #8B3333;
 }
 .assigned {
   background-color: rgba(180,168,119,.75);
@@ -319,8 +331,17 @@ table, th, td {
   padding-top: 15px;
   border-left: none;
 }
+
+#contentTable {
+  margin-left: -5px;
+}
+
 #protable {
   margin-bottom: 0;
+  margin-left: -5px;
+}
+#hwtable {
+  margin-left: 14.2em;
 }
 tr .firstrow {
 	border-right: none;
@@ -348,13 +369,21 @@ td {
 }
 .redfont {
 	color: red;
+  margin-left: 12.566em;
 }
 .darkredfont {
   color: #d70000;
 }
+
 #tablep {
-	width: 80%
+  width: 80%;
+  margin-left: 14.2em;
 }
+
+#rule {
+  margin-left: 14.2em;
+}
+
 .addeventstc {
 	margin: 10px;
 	margin-left: 30%;
@@ -364,7 +393,7 @@ td {
   width: 750px;
 }
 
-/* Policies */ 
+/* Policies */
 
 .indent {
   margin-left: 2em;
@@ -398,51 +427,53 @@ td {
 
 /* Media Queries */
 
-/* @345px */
+/* @1000px */
+@media screen and (max-width: 2000px)
+{
 
-@media screen and (min-width: 21.5625em) {
-  /* Let the nav breathe a bit more */
-  nav {
-    font-weight: normal;
-  }
-  .nav a {
-    padding: 0.6315789474em;
-  }
+#tablep
+{
+  margin-left: auto;
+	margin-right: auto;
+	width: 100%
 }
 
-/* @560px */
+#rule
+{
+  margin-left: auto;
+	margin-right: auto;
+	width: 100%
+}
+#rule
+{
+  margin-left: auto;
+	margin-right: auto;
+	width: 100%
+}
+#hwtable
+{
+	margin-left: auto;
+	margin-right: auto;
+  width: 100%
+}
+#protable
+{
+  margin-left: auto;
+	margin-right: auto;
+  width: 100%
+}
+#contentTable
+{
+  margin-left: auto;
+	margin-right: auto;
+  width: 100%
+}
 
-@media screen and (min-width: 560px) {
-  .flexbox .agenda > ol {
-    display: flex;
-    justify-content: space-between;
-  }
-  .flexbox .agenda > ol > li {
-    flex: 0 1 43.5484%;
-    padding: 0;
-  }
-  .assigned {
-    padding: 1.2631578947em 1.8947368421em 0.6315789474em 1.8947368421em;
-    margin-left: -1.8947368421em;
-    margin-right: -1.8947368421em;
-  }
-  .flexbox .link-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .flexbox #course-resources {
-    flex: 0 1 100%;
-  }
-  .flexbox #essential-tools,
-  .flexbox #essential-references {
-    flex: 0 1 43.5484%;
-  }
 }
 
 /* @650px */
 
-@media screen and (min-width: 40.625em) {
+@media screen and (min-width: 150.625em) {
   html {
     padding: 0;
   }
@@ -478,7 +509,7 @@ td {
     width: 42.5%;
     margin-right: 0;
   }
-  
+
   #essential-references {
     position: absolute;
     top: 0px;
@@ -488,8 +519,91 @@ td {
 
 }
 
-@media screen and (min-width: 804px) {
+@media screen and (min-width: 8004px) {
   .flexbox .agenda > ol {
     display: flex; /* My life for element/container queries...*/
   }
 }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+
+
+	/*
+	Max width before this PARTICULAR table gets nasty
+	This query will take effect for any screen smaller than 760px
+	and also iPads specifically.
+	*/
+	@media
+	only screen and (max-width: 760px),
+	(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+		tr { border: 1px solid #59453C; }
+
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			position: relative;
+
+		}
+
+		td:before {
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 6px;
+			left: 6px;
+			width: 45%;
+			white-space: nowrap;
+		}
+	}
+
+	/* Smartphones (portrait and landscape) ----------- */
+	@media only screen
+	and (min-device-width : 320px)
+	and (max-device-width : 480px) {
+		body {
+			padding: 0;
+			margin: 0;
+			width: 320px; }
+		}
+
+	/* iPads (portrait and landscape) ----------- */
+	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+		body {
+			width: 495px;
+		}
+	}
+
+.btn-info{color:#fff;background-color:#5bc0de;border-color:#46b8da}.btn-info.focus,.btn-info:focus{color:#fff;background-color:#31b0d5;border-color:#1b6d85}.btn-info:hover{color:#fff;background-color:#31b0d5;border-color:#269abc}.btn-info.active,.btn-info:active,.open>.dropdown-toggle.btn-info{color:#fff;background-color:#31b0d5;border-color:#269abc}.btn-info.active.focus,.btn-info.active:focus,.btn-info.active:hover,.btn-info:active.focus,.btn-info:active:focus,.btn-info:active:hover,.open>.dropdown-toggle.btn-info.focus,.open>.dropdown-toggle.btn-info:focus,.open>.dropdown-toggle.btn-info:hover{color:#fff;background-color:#269abc;border-color:#1b6d85}.btn-info.active,.btn-info:active,.open>.dropdown-toggle.btn-info{background-image:none}.btn-info.disabled.focus,.btn-info.disabled:focus,.btn-info.disabled:hover,.btn-info[disabled].focus,.btn-info[disabled]:focus,.btn-info[disabled]:hover,fieldset[disabled] .btn-info.focus,fieldset[disabled] .btn-info:focus,fieldset[disabled] .btn-info:hover{background-color:#5bc0de;border-color:#46b8da}.btn-info
+.btn-group-justified>
+.btn,.btn-group-justified>
+.btn-group{display:table-cell;float:none;width:1%}
+.btn-group-justified>
+.btn-group
+.btn{width:100%}
+.btn-group-justified>
+.btn-group
+.dropdown-menu{left:auto}[data-toggle=buttons]>
+.btn input[type=checkbox],[data-toggle=buttons]>
+.btn input[type=radio],[data-toggle=buttons]>
+.btn-group>
+.btn input[type=checkbox],[data-toggle=buttons]>
+.btn-group>
+.btn input[type=radio]{position:absolute;clip:rect(0,0,0,0);pointer-events:none}
+.input-group{position:relative;display:table;border-collapse:separate}
+.collapse{display:none}.collapse.in{display:block}tr.collapse.in{display:table-row}tbody.collapse.in{display:table-row-group}
